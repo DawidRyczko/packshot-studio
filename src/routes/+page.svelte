@@ -236,11 +236,11 @@
   <header class="flex items-center justify-between border-b border-base-200 pb-4 mb-6">
     <div class="flex items-center gap-3">
       <div class="w-10 h-10 rounded-xl bg-primary text-primary-content flex items-center justify-center font-black text-lg shadow-sm">
-        PR
+        PS
       </div>
       <div>
-        <h1 class="text-xl font-extrabold tracking-tight">Photo Resizer</h1>
-        <p class="text-xs text-base-content/60">Fit & Pad eCommerce Product Images to Canvas</p>
+        <h1 class="text-xl font-extrabold tracking-tight">Packshot Studio</h1>
+        <p class="text-xs text-base-content/60">Batch eCommerce Packshot Generator & Canvas Padding</p>
       </div>
     </div>
 
@@ -328,7 +328,7 @@
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="{failed.length > 0 ? 'text-warning' : 'text-success'} text-base font-bold">
-                {failed.length === 0 ? '✓' : '⚠'} Resized {successful.length} of {results.length} photos
+                {failed.length === 0 ? '✓' : '⚠'} Created {successful.length} of {results.length} packshots
               </span>
             </div>
             {#if outputDirectory && successful.length > 0}
@@ -554,9 +554,9 @@
           >
             {#if isProcessing}
               <span class="loading loading-spinner loading-xs"></span>
-              Resizing Photos...
+              Generating Packshots...
             {:else}
-              Fit & Pad {files.length} {files.length === 1 ? 'Photo' : 'Photos'} to {targetWidth}×{targetHeight}
+              Generate {files.length} Packshot{files.length === 1 ? '' : 's'} ({targetWidth}×{targetHeight})
             {/if}
           </button>
 
@@ -566,7 +566,7 @@
               <div class="flex justify-between items-center text-xs">
                 <span class="font-semibold text-base-content/80">
                   {#if isProcessing}
-                    Resizing photos...
+                    Processing packshots...
                   {:else}
                     Done!
                   {/if}

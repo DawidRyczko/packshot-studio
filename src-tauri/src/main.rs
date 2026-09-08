@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    photo_resizer_lib::run()
+    packshot_studio_lib::run()
 }

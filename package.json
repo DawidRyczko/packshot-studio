@@ -1,7 +1,7 @@
 {
-  "name": "photo-resizer",
+  "name": "packshot-studio",
   "version": "0.1.0",
-  "description": "Photo Resizer desktop application",
+  "description": "Packshot Studio desktop application",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
