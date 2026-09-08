@@ -90,7 +90,7 @@
           id: crypto.randomUUID(),
           name,
           path: p,
-          previewUrl: convertFileSrc(p)
+          previewUrl: convertFileSrc(p),
         };
       });
 
@@ -103,9 +103,9 @@
       filters: [
         {
           name: 'Images (JPG, PNG, HEIC, WEBP)',
-          extensions: ['jpg', 'jpeg', 'png', 'heic', 'webp']
-        }
-      ]
+          extensions: ['jpg', 'jpeg', 'png', 'heic', 'webp'],
+        },
+      ],
     });
 
     if (selected) {
@@ -118,7 +118,7 @@
     const selected = await open({
       directory: true,
       multiple: false,
-      title: 'Select Destination Folder'
+      title: 'Select Destination Folder',
     });
 
     if (selected && typeof selected === 'string') {
@@ -216,9 +216,9 @@
           quality: quality,
           output_dir: outputDirectory,
           file_prefix: null,
-          file_suffix: null
+          file_suffix: null,
         },
-        onProgress
+        onProgress,
       });
 
       results = res;
@@ -231,16 +231,22 @@
   }
 </script>
 
-<main class="min-h-screen bg-base-100 text-base-content p-6 flex flex-col max-w-6xl mx-auto select-none">
+<main
+  class="min-h-screen bg-base-100 text-base-content p-6 flex flex-col max-w-6xl mx-auto select-none"
+>
   <!-- Top Bar -->
   <header class="flex items-center justify-between border-b border-base-200 pb-4 mb-6">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-primary text-primary-content flex items-center justify-center font-black text-lg shadow-sm">
+      <div
+        class="w-10 h-10 rounded-xl bg-primary text-primary-content flex items-center justify-center font-black text-lg shadow-sm"
+      >
         PS
       </div>
       <div>
         <h1 class="text-xl font-extrabold tracking-tight">Packshot Studio</h1>
-        <p class="text-xs text-base-content/60">Batch eCommerce Packshot Generator & Canvas Padding</p>
+        <p class="text-xs text-base-content/60">
+          Batch eCommerce Packshot Generator & Canvas Padding
+        </p>
       </div>
     </div>
 
@@ -261,10 +267,12 @@
         aria-label="Photo dropzone"
         class="border-2 border-dashed rounded-3xl p-8 text-center transition-all duration-200 flex flex-col items-center justify-center gap-3 cursor-pointer
           {isDragging
-            ? 'border-primary bg-primary/10 scale-[1.01]'
-            : 'border-base-300 hover:border-primary/60 bg-base-200/50 hover:bg-base-200'}"
+          ? 'border-primary bg-primary/10 scale-[1.01]'
+          : 'border-base-300 hover:border-primary/60 bg-base-200/50 hover:bg-base-200'}"
       >
-        <div class="w-14 h-14 rounded-2xl bg-base-100 shadow-sm flex items-center justify-center text-primary pointer-events-none">
+        <div
+          class="w-14 h-14 rounded-2xl bg-base-100 shadow-sm flex items-center justify-center text-primary pointer-events-none"
+        >
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
@@ -280,7 +288,11 @@
           <p class="text-xs text-base-content/60">Supports JPG, JPEG, PNG, HEIC, WEBP</p>
         </div>
 
-        <button class="btn btn-primary btn-sm mt-1 shadow" onclick={handleBrowseFiles} disabled={isProcessing}>
+        <button
+          class="btn btn-primary btn-sm mt-1 shadow"
+          onclick={handleBrowseFiles}
+          disabled={isProcessing}
+        >
           Browse Files
         </button>
       </div>
@@ -290,13 +302,16 @@
         <div class="card bg-base-200/80 shadow-sm p-4 border border-base-300/50">
           <div class="flex items-center justify-between mb-2">
             <span class="text-xs font-semibold uppercase tracking-wider text-base-content/70">
-              Queue ({files.length} {files.length === 1 ? 'photo' : 'photos'})
+              Queue ({files.length}
+              {files.length === 1 ? 'photo' : 'photos'})
             </span>
           </div>
 
           <ul class="flex flex-col gap-1.5 max-h-72 overflow-y-auto pr-1">
             {#each files as item (item.id)}
-              <li class="flex items-center justify-between gap-3 bg-base-100 p-2 rounded-xl border border-base-300">
+              <li
+                class="flex items-center justify-between gap-3 bg-base-100 p-2 rounded-xl border border-base-300"
+              >
                 <div class="flex items-center gap-3 min-w-0 flex-1">
                   <img
                     src={item.previewUrl}
@@ -321,21 +336,24 @@
 
       <!-- Results Summary -->
       {#if results}
-        {@const successful = results.filter(r => r.success)}
-        {@const failed = results.filter(r => !r.success)}
+        {@const successful = results.filter((r) => r.success)}
+        {@const failed = results.filter((r) => !r.success)}
 
-        <div class="card {failed.length > 0 ? 'bg-warning/10 border-warning/30' : 'bg-success/10 border-success/30'} border p-4 rounded-2xl flex flex-col gap-3">
+        <div
+          class="card {failed.length > 0
+            ? 'bg-warning/10 border-warning/30'
+            : 'bg-success/10 border-success/30'} border p-4 rounded-2xl flex flex-col gap-3"
+        >
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="{failed.length > 0 ? 'text-warning' : 'text-success'} text-base font-bold">
+              <span
+                class="{failed.length > 0 ? 'text-warning' : 'text-success'} text-base font-bold"
+              >
                 {failed.length === 0 ? '✓' : '⚠'} Created {successful.length} of {results.length} packshots
               </span>
             </div>
             {#if outputDirectory && successful.length > 0}
-              <button
-                class="btn btn-xs btn-outline btn-success"
-                onclick={handleOpenOutputFolder}
-              >
+              <button class="btn btn-xs btn-outline btn-success" onclick={handleOpenOutputFolder}>
                 Open Output Folder
               </button>
             {/if}
@@ -476,7 +494,9 @@
             bind:value={paddingPercent}
             disabled={isProcessing}
           />
-          <span class="text-[11px] text-base-content/50">Space around product so it doesn't touch canvas edges.</span>
+          <span class="text-[11px] text-base-content/50"
+            >Space around product so it doesn't touch canvas edges.</span
+          >
         </div>
 
         <div class="divider my-0"></div>
@@ -531,7 +551,9 @@
             <input
               type="text"
               class="input input-sm input-bordered flex-1 text-xs font-mono truncate"
-              placeholder={files.length > 0 ? 'Automatic (source folder / resized)' : 'Add photos to set path...'}
+              placeholder={files.length > 0
+                ? 'Automatic (source folder / resized)'
+                : 'Add photos to set path...'}
               bind:value={outputDirectory}
               readonly
             />

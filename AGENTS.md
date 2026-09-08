@@ -27,6 +27,7 @@ A high-performance, lightweight **desktop application** built exclusively for de
 ## 📋 Core Coding Rules & Conventions
 
 ### 1. Svelte 5 Runes Only
+
 - Always use Svelte 5 Runes for reactivity:
   - `$state()` for reactive variables
   - `$derived()` / `$derived.by()` for computed values
@@ -36,6 +37,7 @@ A high-performance, lightweight **desktop application** built exclusively for de
 - Use standard modern event handlers: `onclick`, `onchange`, `ondragover`, `ondrop`.
 
 ### 2. Native Desktop Operations & Image Processing
+
 - **Drag & Drop**: Use Tauri's native `getCurrentWebview().onDragDropEvent` from `@tauri-apps/api/webview` to handle file paths directly from the OS.
 - **File Dialogs & Picker**: Use `@tauri-apps/plugin-dialog` to trigger native OS Finder / Explorer dialogs.
 - **Batch Resizing Command**: Call `invoke('resize_images', { paths, options, onProgress })` which executes parallel Lanczos3 scaling and canvas padding on worker threads in Rust, streaming live progress via `Channel`.
@@ -43,11 +45,13 @@ A high-performance, lightweight **desktop application** built exclusively for de
 - **Do not write mock web fallbacks** — assume execution is always inside the Tauri desktop runtime.
 
 ### 3. UI & Design System (DaisyUI + Tailwind CSS)
+
 - Leverage DaisyUI semantic component classes (`btn`, `card`, `badge`, `range`, `input`, `modal`, `progress`).
 - Use Tailwind utility classes for layout, spacing, and micro-interactions.
 - Keep the application responsive, clean, and optimized for a desktop user experience.
 
 ### 4. Code Quality & Typing
+
 - Strict TypeScript: Ensure all types, props, and payloads are explicitly typed.
 - Verify changes with `npm run check` and ensure zero errors or warnings before committing.
 

@@ -9,11 +9,9 @@ async fn resize_images(
     options: ResizeOptions,
     on_progress: Channel<ProcessProgress>,
 ) -> Result<Vec<ProcessResult>, String> {
-    tauri::async_runtime::spawn_blocking(move || {
-        process_batch_images(paths, options, on_progress)
-    })
-    .await
-    .map_err(|e| format!("Task execution failed: {}", e))
+    tauri::async_runtime::spawn_blocking(move || process_batch_images(paths, options, on_progress))
+        .await
+        .map_err(|e| format!("Task execution failed: {}", e))
 }
 
 #[tauri::command]

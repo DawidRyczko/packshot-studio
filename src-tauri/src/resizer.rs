@@ -13,10 +13,10 @@ use tauri::ipc::Channel;
 pub struct ResizeOptions {
     pub canvas_width: u32,
     pub canvas_height: u32,
-    pub bg_color_hex: String, // e.g. "#FFFFFF" or "transparent"
-    pub padding_percent: f32, // e.g. 5.0 for 5% margin on each side
+    pub bg_color_hex: String,  // e.g. "#FFFFFF" or "transparent"
+    pub padding_percent: f32,  // e.g. 5.0 for 5% margin on each side
     pub output_format: String, // "jpg", "png", "webp"
-    pub quality: u8,          // 1 - 100 (for JPG/WEBP)
+    pub quality: u8,           // 1 - 100 (for JPG/WEBP)
     pub output_dir: String,
     pub file_prefix: Option<String>,
     pub file_suffix: Option<String>,
@@ -123,7 +123,12 @@ pub fn process_single_image(input_path_str: &str, options: &ResizeOptions) -> Pr
     let target_h = ((orig_h as f32 * scale_ratio).round() as u32).max(1);
 
     // High quality resize using Lanczos3
-    let resized = imageops::resize(&src_rgba, target_w, target_h, imageops::FilterType::Lanczos3);
+    let resized = imageops::resize(
+        &src_rgba,
+        target_w,
+        target_h,
+        imageops::FilterType::Lanczos3,
+    );
 
     // Prepare canvas with background color
     let mut bg_color = parse_hex_color(&options.bg_color_hex);
