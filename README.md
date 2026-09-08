@@ -1,4 +1,6 @@
-# 📸 Packshot Studio
+<img src="app-icon.svg" alt="Packshot Studio Icon" width="128" height="128" />
+
+# Packshot Studio
 
 A high-performance, lightweight desktop application designed for photographers, e-commerce sellers, and studios to batch resize, pad, and standardize packshot product photos.
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { getCurrentWebview } from '@tauri-apps/api/webview';
-  import { convertFileSrc, invoke, Channel } from '@tauri-apps/api/core';
-  import { open } from '@tauri-apps/plugin-dialog';
+  import {onMount} from 'svelte';
+  import {getCurrentWebview} from '@tauri-apps/api/webview';
+  import {Channel, convertFileSrc, invoke} from '@tauri-apps/api/core';
+  import {open} from '@tauri-apps/plugin-dialog';
 
   interface FileItem {
     id: string;
@@ -205,7 +205,7 @@
 
     try {
       const paths = files.map((f) => f.path);
-      const res = await invoke<ProcessResult[]>('resize_images', {
+      results = await invoke<ProcessResult[]>('resize_images', {
         paths,
         options: {
           canvas_width: targetWidth,
@@ -220,8 +220,6 @@
         },
         onProgress,
       });
-
-      results = res;
     } catch (err) {
       console.error('Error during batch resizing:', err);
       alert('Error resizing photos: ' + String(err));
@@ -237,11 +235,11 @@
   <!-- Top Bar -->
   <header class="flex items-center justify-between border-b border-base-200 pb-4 mb-6">
     <div class="flex items-center gap-3">
-      <div
-        class="w-10 h-10 rounded-xl bg-primary text-primary-content flex items-center justify-center font-black text-lg shadow-sm"
-      >
-        PS
-      </div>
+      <img
+        src="/favicon.png"
+        alt="Packshot Studio logo"
+        class="w-10 h-10 rounded-xl shadow-sm object-cover"
+      />
       <div>
         <h1 class="text-xl font-extrabold tracking-tight">Packshot Studio</h1>
         <p class="text-xs text-base-content/60">
