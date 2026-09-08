@@ -11,3 +11,8 @@ vite.config.ts.timestamp-*
 
 # Tauri / Rust
 src-tauri/target
+
+# IDEs and Agent configurations
+.idea
+.vscode
+.junie
