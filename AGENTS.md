@@ -19,6 +19,7 @@ A high-performance, lightweight **desktop application** built exclusively for de
 - **Frontend Framework**: SvelteKit with `@sveltejs/adapter-static` (`src/`)
 - **UI & Components**: Svelte 5 (Runes) + TypeScript
 - **Styling**: Tailwind CSS v4 + DaisyUI v5 (`src/app.css`)
+- **Image Processing Engine**: Rust backend (`src-tauri/src/resizer.rs`) with `image`, `fast_image_resize`, and `rayon` multi-threading.
 - **Build Tool**: Vite 8
 
 ---
@@ -34,10 +35,11 @@ A high-performance, lightweight **desktop application** built exclusively for de
 - **Never** use legacy Svelte 3/4 syntax (`export let`, `$: computedVar = ...`, `on:click`, `createEventDispatcher`).
 - Use standard modern event handlers: `onclick`, `onchange`, `ondragover`, `ondrop`.
 
-### 2. Native Desktop Operations
+### 2. Native Desktop Operations & Image Processing
 - **Drag & Drop**: Use Tauri's native `getCurrentWebview().onDragDropEvent` from `@tauri-apps/api/webview` to handle file paths directly from the OS.
 - **File Dialogs & Picker**: Use `@tauri-apps/plugin-dialog` to trigger native OS Finder / Explorer dialogs.
-- **File System & Processing**: Read and write files directly using native file paths via `@tauri-apps/plugin-fs` or custom Rust commands (`invoke()` from `@tauri-apps/api/core`).
+- **Batch Resizing Command**: Call `invoke('resize_images', { paths, options, onProgress })` which executes parallel Lanczos3 scaling and canvas padding on worker threads in Rust, streaming live progress via `Channel`.
+- **Open Output in Finder**: Use `openPath` and `revealItemInDir` from `@tauri-apps/plugin-opener` (with permissions enabled in `capabilities/default.json`).
 - **Do not write mock web fallbacks** — assume execution is always inside the Tauri desktop runtime.
 
 ### 3. UI & Design System (DaisyUI + Tailwind CSS)

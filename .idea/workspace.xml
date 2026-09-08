@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1583f272-be0d-4643-91f9-37c3f9dddb2a" name="Changes" comment="added typescript">
+    <list default="true" id="1583f272-be0d-4643-91f9-37c3f9dddb2a" name="Changes" comment="Added first prototype resize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src-tauri/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src-tauri/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src-tauri/capabilities/default.json" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/capabilities/default.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src-tauri/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-tauri/tauri.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/src-tauri/tauri.conf.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,23 +31,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.7079531847070049" />
-      <entry key="MS500" value="5.607239648539458" />
-      <entry key="S2" value="10.329351772020075" />
-      <entry key="S5" value="12.282994506771042" />
-      <entry key="S10" value="13.091194341086647" />
-      <entry key="S30" value="14.316742953148406" />
-      <entry key="S60" value="21.74735967146377" />
-      <entry key="M2" value="51.197787104526775" />
-      <entry key="M5" value="153.1355056103492" />
-      <entry key="M10" value="291.7290139903524" />
-      <entry key="M15" value="399.48303227939283" />
-      <entry key="M30" value="609.0280570964931" />
-      <entry key="H1" value="801.9272801821031" />
-      <entry key="H2" value="941.1926261973051" />
-      <entry key="H4" value="1026.4849623731702" />
-      <entry key="D1" value="1107.55498171146" />
-      <entry key="W1" value="1122.4811760082919" />
+      <entry key="MS100" value="1.9532331272963548" />
+      <entry key="MS500" value="5.129422504664163" />
+      <entry key="S2" value="14.654127961392902" />
+      <entry key="S5" value="31.068681861298753" />
+      <entry key="S10" value="53.584394805064306" />
+      <entry key="S30" value="106.90099625904068" />
+      <entry key="S60" value="137.26347436681942" />
+      <entry key="M2" value="163.09686759817325" />
+      <entry key="M5" value="217.9522976767143" />
+      <entry key="M10" value="320.891024146739" />
+      <entry key="M15" value="431.54248378013114" />
+      <entry key="M30" value="710.6130486642937" />
+      <entry key="H1" value="1027.5583307365166" />
+      <entry key="H2" value="1285.9669954140077" />
+      <entry key="H4" value="1455.1124486661643" />
+      <entry key="D1" value="1623.002030817322" />
+      <entry key="W1" value="1654.6393307625408" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -71,23 +69,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.6753130887821044" />
-      <entry key="MS500" value="5.58209827281982" />
-      <entry key="S2" value="10.317227268621908" />
-      <entry key="S5" value="12.277122079762373" />
-      <entry key="S10" value="13.088042642761303" />
-      <entry key="S30" value="14.315586758327454" />
-      <entry key="S60" value="21.746470454180145" />
-      <entry key="M2" value="51.19663422952839" />
-      <entry key="M5" value="153.1334917026469" />
-      <entry key="M10" value="291.72677920901947" />
-      <entry key="M15" value="399.4809476938063" />
-      <entry key="M30" value="609.0264777989822" />
-      <entry key="H1" value="801.9262514619012" />
-      <entry key="H2" value="941.1920253149715" />
-      <entry key="H4" value="1026.484635206188" />
-      <entry key="D1" value="1107.5549229150206" />
-      <entry key="W1" value="1122.4811674959603" />
+      <entry key="MS100" value="1.9131387855564788" />
+      <entry key="MS500" value="5.108220798638142" />
+      <entry key="S2" value="14.63883433002628" />
+      <entry key="S5" value="31.055646236940618" />
+      <entry key="S10" value="53.5730290372331" />
+      <entry key="S30" value="106.89331120579801" />
+      <entry key="S60" value="137.2585115848916" />
+      <entry key="M2" value="163.09390423150737" />
+      <entry key="M5" value="217.9506869881174" />
+      <entry key="M10" value="320.88970406382714" />
+      <entry key="M15" value="431.541155867837" />
+      <entry key="M30" value="710.61176552374" />
+      <entry key="H1" value="1027.55732230496" />
+      <entry key="H2" value="1285.9663384536286" />
+      <entry key="H4" value="1455.1120695428297" />
+      <entry key="D1" value="1623.0019591728087" />
+      <entry key="W1" value="1654.6393202987215" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -192,7 +190,7 @@
       <updated>1788372892571</updated>
       <workItem from="1788372893586" duration="3596000" />
       <workItem from="1788863773832" duration="34000" />
-      <workItem from="1788863817764" duration="3966000" />
+      <workItem from="1788863817764" duration="5673000" />
     </task>
     <task id="LOCAL-00001" summary="added vue to package json">
       <option name="closed" value="true" />
@@ -218,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788375377249</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added first prototype resize">
+      <option name="closed" value="true" />
+      <created>1788868030225</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1788868030225</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +241,7 @@
     <MESSAGE value="added vue to package json" />
     <MESSAGE value="connected electron with Vue" />
     <MESSAGE value="added typescript" />
-    <option name="LAST_COMMIT_MESSAGE" value="added typescript" />
+    <MESSAGE value="Added first prototype resize" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added first prototype resize" />
   </component>
 </project>
