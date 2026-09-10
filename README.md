@@ -75,4 +75,4 @@ Compiled binaries and installers will be generated under `src-tauri/target/relea
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [PolyForm Perimeter License 1.0.0](LICENSE).

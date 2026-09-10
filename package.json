@@ -16,7 +16,7 @@
     "format:check": "prettier --check .",
     "tauri": "tauri"
   },
-  "license": "MIT",
+  "license": "PolyForm-Perimeter-1.0.0",
   "dependencies": {
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-dialog": "^2.7.3",
